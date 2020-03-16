@@ -77,7 +77,8 @@ GO
 
 Note that with the `--force` flag the existing db context will be overwritten, inlcuding the changes in the `OnConfiguring` method (see notes on migrations below). Keep a copy of the original context class and copy the contents of the `OnConfiguring` method over after scaffolding.
 
-TODO How does this affect migrations, is it possible to just re-scaffold and then create a new migration on top?
+After re-scaffolding the model has been updated and the old migrations are intact.
+To close the loop, run `dotnet ef migrations add <Name for changeset>` to have the migrations reflect the new changes too.
 
 ## Notes
 
@@ -124,6 +125,9 @@ To achieve this, the connection string is read from the environment variables in
 Note that this is a manual change to generated source code which will be overwritten when re-scaffolding!
 
 ```
+...
+using dotenv.net;
+...
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 {
 	if (!optionsBuilder.IsConfigured)

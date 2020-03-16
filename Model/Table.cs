@@ -8,5 +8,6 @@ namespace Data
         public int Id { get; set; }
         public string Value { get; set; }
         public string OtherValue { get; set; }
+        public string ThirdValue { get; set; }
     }
 }

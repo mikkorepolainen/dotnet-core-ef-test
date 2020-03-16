@@ -5,6 +5,7 @@
     <RootNamespace>Data</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="dotenv.net" Version="1.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

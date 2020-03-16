@@ -30,7 +30,7 @@ namespace Api
             services.AddControllers();
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") {
                 Console.WriteLine("DEVELOPMENT MODE");
-                DotEnv.Config();                
+                DotEnv.Config();
             }
             services.AddSingleton(new TableRepository(Environment.GetEnvironmentVariable("EF_TEST_CONNSTR")));
         }

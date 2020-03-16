@@ -8,20 +8,13 @@ Testing EF with dotnet core.
 - Migrations
 - API project on top of the DAL
 
-## Development
+## Running
 
-Create an mssql database with table:
+Copy the `.env.example` file as `.env` in Api project directory, replace connection string with connection string to your db (`.env` file is excluded from version control). Do the same for Data project (this is for ef tools, not runtime).
 
-```
-CREATE TABLE [dbo].[Table](
-	[id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[Value] [nvarchar](max) NULL
-)
-```
+Execute `dotnet ef database update`. This creates the database artifacts by running all migrations against the DB.
 
-Copy the `.env.example` file as `.env` in Api project directory, replace connection string with connection string to your db (`.env` file is excluded from version control)
-
-Execute `dotnet run` in the Api project dir
+Execute `dotnet run` in the Api project dir.
 
 ## Model Updates
 
